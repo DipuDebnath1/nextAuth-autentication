@@ -1,6 +1,14 @@
+import User from "@/models/User";
 import NextAuth from "next-auth"
 import GithubProvider from "next-auth/providers/github"
 import GoogleProvider from "next-auth/providers/google";
+
+
+(async()=>{ 
+  const users  = await User.findAll()
+  console.log('users ', users); 
+})()
+
 
 export const authOptions = {
   // Configure one or more authentication providers
